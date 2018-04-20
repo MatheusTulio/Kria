@@ -1,0 +1,707 @@
+Google Analytics (GA)
+
+
+INTRODUÇÃO:
+
+
+	O GA é uma plataforma que coleta e compila dados em relatórios.
+
+	A coleta de dados do GA funciona através de um código de acompanhamento em javascript, ou seja, através da anexação desse código em sua página web, o GA já consegue ter acesso para coletar dados, sejam eles a navegação do usuário no site, clicar em algum botão, browser ou SO utilizado, origem do tráfego, entre muitas outras coisas.
+
+	As contas do GA podem ser agrupadas em uma "Oraganização".
+
+	Cada conta pode ter múltiplas "Propriedades" e essas podem ter múltiplas "Views / Visualizações".
+
+	Cada propriedade pode estar responsável por um site, por um app mobile ou por qualquer outro tipo de recurso eletrônico. Pode ser Marcas diferentes, produtos diferentes, etc.
+
+	Cada propriedade consegue coletar os dados através de um ID único que vai junto ao código javascript que será posto no código do site.
+
+	Os relatórios são gerados a partir dos dados que estão nas views, então cada view gera um relatório.
+
+	É possível utilizar o recurso do "Filtro" para restringir os dados que serão coletados e compilados nos relatórios pelas views.
+
+	As views podem ser separadas por regiões, por tráfico externo, pode ser uma view geral.
+
+	As metas são uma maneira valiosa de acompanhar conversões ou objetivos de negócios do seu site.
+
+	Cuidado com a configuração de todas as coisas da conta, pois, após a coleta, os dados não poderão ser mais modificados.
+
+	As views não podem coletar dados anteriores à sua criação e se elas forem deletadas apenas os administradores podem recupera-las e por um período definido (35 dias).
+
+	As permissões da conta GA podem alterar a coleta de dados. Se alguém tem acesso à conta, então ela tem direito de alterar propriedades e views. Alguém que tem acesso apenas à views, não pode alterar a conta nem as propriedades.
+
+	Ao clicar em "Administrador", você pode configurar as permissões de usuário do Google Analytics para "Gerenciar usuários", "Editar", "Colaborar" ou "Ler e analisar".
+
+	    - "Gerenciar usuários" permite adicionar ou remover usuários da conta, propriedade ou vista.
+	    - "Editar" permite fazer alterações nas configurações.
+	    - "Colaborar" permite compartilhar recursos como painéis e algumas configurações de métricas.
+	    - Por fim, "Ler e analisar" permite visualizar dados, analisar relatórios e criar painéis, mas restringe alterações nas configurações ou a adição de novos usuários.
+
+	O código de acompanhamento deve se localizar logo abaixo da abertura da tag <head> na página HTML.
+
+	É importante manter uma view sem filtro nenhum chamada Dados Brutos (Raw Data), pois dessa forma você semrpe terá acesso aos dados originais.
+
+	Exsistem dois tipos de filtros, os customizados e os pré-definidos, os pré-definidos são filtros já feitos que podem ser conseiderados os filtros mais usados normalmente, são templates. Já os customizados são os filtros criados à partir de um novo tipo de demanda, algo mais específico.
+
+	DICA : Usar sempre uma view de teste para aplciar os novos filtros que serão implementados antes de usa-los na view principal.
+
+	Cada filtro é realizado na ordem que é produzido, portanto tomar cuidado na ordem de criação de filtros.
+
+	Para encontrar seu código de acompanhamento do Google Analytics, siga esse caminho :
+			- Guia "Administrador" > Informações de acompanhamento > Código de acompanhamento
+
+
+	Conversão - É o número de ações esperadas que o usuário faça dentro da sua página web. É a conclusão de alguma meta / goal. 
+
+	Taxa de Rejeição - É o número de usuários que saíram do seu site após visualizar uma única página sem realizar nenhuma ação adicional.
+
+	Métricas - São números reais de um conjunto de dados.(Ex.: Número de camisas vendidas)(São as colunas com os dados em específico)
+
+	Dimensão - São atributos de conjunto de dados organziados para uma melhor análise. (Ex.: Número de camisas vendidas de determinada cor ou para um determinado gênero)(É, por padrão, a primeira coluna).
+
+	Lead - É um cliente em potencial.
+
+	Usuário Ativo - Depende do tempo, um usuário ativo de 7 dias, é um usuário único que iniciou pelomenos uma sessão em 7 dias.
+
+
+
+LAYOUT GOOGLE ANALYTICS:
+
+
+	O sino na parte direita superior da página indica alertas sobre propriedades e views, de forma que mostra se algum dado não está sendo coletado da forma como deveria ou quando alguma configuração precisa ser otimizada.
+
+	Seção de Personalização - Nessa seção é possível criar relatórios personalizados, específicos para a necessidade em questão.
+
+
+	Tempo Real- É possível analisar o comportamento do usuários enquanto ele está acessando sua página web, isso inclui dados como origem dos usários, se ele realizou uam conversão, entre outras coisas.
+
+	Público - Os relatórios de público alvo mostram todo tipo de dado sobre seu usuário, desde idade até se ele é um usuário recorrente.
+
+	Aquisição - Os relatórios de aquisição mostram quais os canais que atraíram o usuário para seu site. Os canais podem ser:
+
+		- Orgânico (Pesquisa Não Paga)
+		- CPC (Custo por clique ou pesquisa paga)
+		- Referência (Tŕafego proveniente de outro website)
+		- Social (De alguma Rede Social)
+		- Email (proveniente de uma campanha por email)
+		- Nenhuma (o usuário digitou a url diretamente)
+		- Outros
+
+	Comportamento - Os relatórios de comportamento mostram as formas de engajamento das pesssoas com seu site, incluindo quasi páginas elas visualizaram e suas páginas de destino saída. COm a implementação adicional, você pode até mesmo acompanhar o que os usuários pesquisaram no seu site e se eles interagiram com elementos específicos.
+
+	Conversão - Com os relatórios de conversão, é possível acompanahr as metas do website com base nos seus objetivos de negócio.
+
+
+	Seletor de Segmentos - Um segmento funciona como um filtro que você pode aplicar para ver dados específicos e comparar métricas. Um segmento é um subconjunto de dados.
+
+	Um segmento consiste em um ou mais filtros não destrutivos (que não alteram os dados subjacentes). Esses filtros isolam subconjuntos de usuários, sessões e hits.
+
+	No relatório completo, a seta no cabeçalho msotra qual coluna está sendo analisada no momento.
+
+	A opção "Salvar" cria um link para o relatório em questão que fica salvo na área de "Personalização" em "Relatórios Salvos".
+
+	Os relatórios editados ficam salvos na área de "Personalização" em "Relatórios personalizados".
+
+	Taxa de amostragem - É a porcentagem da quantidade de sessões utilizadas para criar relatório, o GA pode não usar todas as sessões para criar o relatório mais rapidamente, por isso é chamdo de amostragem. Para ver a taxa de amostragem é so deixar o cursos em cima do ícone de verificação verde.
+
+	Para criar painéis novos, basta ir no menu "Personalização" e entrar em "Painéis".
+
+	No novo painel é possível criar widgets que sejam úteis para a sua empresa, com configurações como métricas e filtros bem específicos para as aparecerem os dados mais importantes para os relatórios da sua empresa.
+
+	Existem dois tipos de painéis, o privade e o compartilhado. O privado só aparece para o criador do painel,já o painel compartilhado aparece para todas as pessoas que tiverem o link para o painel. O limite de paineis privados são 20 e os compartilhados são 50.
+
+	A pessoa que recebe um painel compartilhado pode alterar o painel, porém essa alteração será apenas para ela, essa alteração não vai mudar o painel original.
+
+	Existem duas formas de compartilhamento, por link e compartilhando com a Galeria de soluções. A Galeria de Soluções é onde os usuários do GA compartilham a criação deles. Na Galeria de Soluções é possível achar um modelo já feito que pode se encaixar muito com o que você precisa para a sua empresa.
+
+	Gŕafico por comparação msotra os dados que estão acima e abaixo da média do website.
+
+
+
+
+
+RELATÓRIO BÁSICO:
+	
+
+	Os "Relatórios Públicos" mostram dados sobre seus usuários como seus países, suas línguas e as tecnologias que os mesmos usaram para acessar o site. Também possui dados como engajamento e lealdade.
+
+	No relatório de "Usuários Finais" é possível ver quantos usuários fizeram pelomenos uma sessão no site de acordo com um período de tempo, isso é chamado de "alcance do site" ou "retenção". 
+
+	Relatórios de "Dados demográficos" fornecem dados sobre a idade e o sexo dos usuários.
+
+	O relatório "Interesses" mostra as preferências dos seus usuários por determinados tipos de conteúdo, como tecnologia, música, viagens ou TV. Essas informações têm duas utilidades. Primeiro, se você conhece seu público, pode verificar se alcança as pessoas certas. Segundo, elas ajudam a orientar suas decisões sobre marketing e conteúdo.
+
+	Para ter acesso aos dados demográficos e de interesse é preciso habilitar essa função. Para habilitar isso é preciso ir na aba "Admin", ir para a opção "Configuração de Propriedades" e em "Recursos de Publicidade", marque "Ativar relatórios de dados demográficos e interesse".
+
+	Se seu tráfego for muito baixo ou sua segmentação for muito restrita, pode ser que não apareçam dados demográficos.
+
+
+	TRECHO DO SITE EXPLICATIVO: 
+
+		O relatório "Location" gera muitas informações interessantes. Por exemplo, com o mapa mostrando "Porcentagem de novas sessões", você identifica novos mercados em potencial com base no tráfego de novos usuários do seu website. Assim, você decide se gera reconhecimento ou investe na lealdade de clientes em determinados locais.
+
+		Na tabela abaixo da visualização, você identifica as áreas que têm um alto número de conversões, ou transações, mas baixas taxas de tráfego. as áreas que têm um alto número de conversões, ou transações, mas baixas taxas de tráfego.
+
+		Outra técnica de análise é identificar as regiões onde você tem um público grande, mas inferior à média de desempenho. Por exemplo, se algumas regiões têm uma taxa de rejeição acima da média, ou usuários que abandonam seu site, otimize sua publicidade. Talvez você precise traduzir seu anúncio ou site para um idioma local ou adicionar conteúdo específico para a região.
+
+	Os relatórios "Aquisição" são usados para comparar o desempenho de diferentes canais de marketing e descobrir a origem das conversões e do tráfego de melhor qualidade. Isso ajuda a tomar melhores decisões sobre suas iniciativas de marketing. 
+
+	Mídia é o mecanismo que leva o usuário ao seu site.
+
+	As dimensões da Origem do tráfego são automaticamente capturadas pelo Google Analytics para cada usuário que visita seu site são "origem, mídia e o nome da campanha de marketing".
+
+	Número de usuários que vieram através de uma mídia não necessariamente é um bom parâmetro para qualidade de tráfego. Um bom parâmetro para analsiar a qualidade de tráfego é a taxa de rejeição.
+
+	Um tráfego com alta qualidade é quando o usuário entra no website e compelta uma conversão.3
+
+	Na área de comportamento, dentro do relatório de todas as páginas, as mesmas aparecem por padrão com o nome do URI, que é a parte do nome da URL após o domínio. Isso pode ser alterado na parte de dimensão principal, por exemplo, como o nome do título dado no código HTML.
+
+	Dentro da aba conteúdo do site, temos alguns relatórios, "Detalhamento de Conteúdo" (armazena as páinas em blocos, dessa forma você consegue analisá-los em blocos também, para entender quais áreas são mais acessadas), "Página de Destino" (Mostra informações sobre a página que o usuário entrou em seu site), "Página de Saída" (Mostra informações sobre a página que o usuário saiu do seu site).
+
+	No relatório de eventos, ficam guardados os dados sobre a interações que o usuário fez com o seu site, por exmeplo, clicar no botão do player de um vídeo.
+
+
+
+
+
+ACOMPANHMENTO BÁSICO DE CONVERSÕES E CAMPANHAS:
+
+
+	O GA se utiliza de várias ações de marketing / Propagandas para coletar dados de usuários, nessas campanhas ele coloca parâmetros / tags a mais nos links, sendo que esses parâmetros permitem que o GA colete dados do usuário e coleta o comportamento dele para com a campanha em questão. Essas tags permitem saber de qual campanha o usuário veio.
+
+	Existem 5 tipos de tags:
+
+	    - MÍDIA(Obrigatório): informa o mecanismo, ou como você enviou a mensagem para o usuário. Use "e-mail" para campanhas de e-mail, "cpc" para anúncios de pesquisa paga ou "social" para uma rede social.
+
+	    - ORIGEM(Obrigatório): informa de onde o usuário veio. Pode ser uma página específica ou um link. A origem também diferencia o tipo de mídia. Ou seja , se a mídia for CPC, ou tráfego pago de custo por clique, a origem pode ser "google", "bing" ou "yahoo".Se a mídia for e-mail, a origem pode ser "boletim".
+
+	    - CAMPANHA(Obrigatório): informa o nome da sua campanha de marketing, como "volta-as-aulas-2015" ou "promocao-fim-de-ano-2015".
+
+	    - CONTEÚDO: ajuda a diferenciar as versões de uma promoção. Isso é útil para testar qual versão de um anúncio ou promoção é mais eficaz. Para testar duas versões de um boletim informativo, crie as tags "v1-desconto-10reais" e "v2-sempromo" para identificar o boletim ao qual os dados estão associados no Google Analytics.
+
+	    - TERMO:  identifica a palavra-chave de campanhas de pesquisa pagas. Use esse campo somente se você criar manualmente uma tag para uma campanha paga, como do Bing ou Yahoo. Falaremos sobre como acompanhar o AdWords em outra lição.
+
+	Para criar esses parâmetros nas URLs, o Google tem uam ferramenta na central de ajuda chamada "Criador de URls", ela se encarregará de montar essas tags para quem estitver desenvolvendo.
+
+	DICA: Seja simples na criação de nomes para essas tags, o GA é case sensitive, por exemplo, use "Display" para banners e "Email" para campanha através de email.
+
+	A ferramenta "Criador de URLs" não é recomendável quando se tem várias páginas e campanhas para criar, uma vez que ele só consegue cirar uma por vez. Para casos de mais campanhas, utilizar uma planilha google, um modele está nesse link : https://docs.google.com/spreadsheets/d/1tf3_SczMMTTf-ZJ9Bkb70xps_DPGLBTd4wkHPyadKSA/edit?usp=sharing
+
+	Após a criação das URLs, é muito importante que esse link seja testado antes de coloca-lo no ar, portanto pode-se testar o link através de uma guia anônima e realizar ações importantes dentro do site, como comprar algo, realizar login, entre outros.
+
+	Os dados das campanhas estão em "Aquisição -> Campanhas".
+
+	Display - Gráfico.
+
+METAS / GOALS:	
+
+
+	Existem dois tipos de metas, as "Business Goals" e "Google Analytics Goals".
+	
+	A Business Goals são as metas que você quer para o seu site, as emtas que você quer que o usuário realize e quando essas metas são realizadas, isso é chamado de conversão. Exemplos: Comprar um item, Fazer uma inscrição.
+
+	A Google Analytics Goals são metas do GA que serverm para acompanhar as metas do site, elas que trazem as informações sobre o andamento das metas, por exemplo, quantos usuários converteram, onde a conversão é interrompida, entre outras coisas. Apenas o Administrador tem acesso a essas metas, só ele pode criá-las e configurá-las. O Adm só pode criar 20 metas por view.
+
+AdWords:
+	
+	Configurar uma conta do Google AdWords : https://adwords.google.com/home/how-it-works/
+	
+	Como vincular e desvincular as contas do GA e do GAW : https://support.google.com/analytics/answer/1033961?hl=en&vid=1-635760473728266369-729394007
+
+	Curso de Google AdWords : https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=602224180431-4n16sppuiom7hqkn78hsnre3bt0pohd6.apps.googleusercontent.com&as=BUpdnOZQ6vj2n02-6cKzrQ&destination=https%3A%2F%2Facademy.exceedlms.com&approval_state=!ChQ4MTlqeVF3TEh0MDR5eDF6X01scBIfWXlRWGlyQXY4MXdjSUxKODJ4ZzJYVzd2NG10YUxCWQ%E2%88%99AB8iHBUAAAAAWtOpPXwMYdQGSO4TWrxPG0KcwvTHbh5l&xsrfsig=AHgIfE8lMTx0EZxtEp2VU4s1Cn7yce6fTg&flowName=GeneralOAuthFlow
+
+	Para linkar as duas contas é necessário que ambas estajam logadas com o mesmo email e que o usuário seja um administrador nas duas contas. 
+
+		- Ir para a aba de Admin no GA
+		- Depois escolher a conta e a propriedade correta para fazer o link.
+		- Na parte de propriedades, selecionar "Vinculação do Google AdWords"
+		- Escolha a conta que deseja vincular e clique em continuar
+		- Criar um título para o grupo de contas vinculadas DICA(ID da conta Google AdWords)
+		- Selecionar a view que você deseja que os dados do Google AdWords apareçam
+		- Clicar em vincular contas.
+
+
+OLHAR O ÚLTIMO VÍDEO PARA TER IDEIAS DE COMO ANALISAR CAMPANAHS DE MARKETING DE FORMA EFICAZ.
+
+
+
+
+
+
+
+
+GOOGLE ANALYTICS ADVANCED
+
+	COLETA E PROCESSAMENTO DE DADOS:
+
+		O código de acompanhamento usa o domínio do site para analisar os dados daquele domínio e dos seus subdomínios. Usar o código de acompanhamento em páginas com domínios diferentes, geram análise de usuário e sessões diferentes, ele analisa elas separadamente.
+
+		O código de acompanhamento envia algo chamado de "hit". Um "hit" é uma string de URL com parâmetros de informações úteis sobre seus usuários.
+
+		O GA consegue identificar os usuários recorrentes dos novos através de um ID que é gerado na "hit".
+
+		Transação - É quando o usuário efetua de fato uma compra.
+
+		Informações que podem ser coletadas por um hit:
+
+			- O idioma configurado no navegador do usuário
+		  - O nome da página sendo visualizada
+		  - A resolução da tela do dispositivo do usuário
+		  - O código do Google Analytics que associa o hit em questão à conta correta do Google Analytics
+		  - O local de um usuário;
+		  - Informações específicos sobre o navegador, sistema operacional e provedor de serviços dele;
+		  - Idade e sexo;
+	    - E a fonte/mídia que direcionou o usuário ao site.
+
+
+		Os três tipos mais comuns de hit são:
+
+		    - "exibição de página"
+		   	- "evento"
+		    - "transação"
+
+		Um hit de exibição de página é acionado quando um usuário carrega uma página da Web com o código de acompanhamento. Esse é um dos tipos mais comuns de hit enviados ao Google Analytics. Sempre que um usuário abre uma página com o código de acompanhamento, um novo hit de exibição de página é enviado.
+
+		Com um hit de evento, você pode acompanhar sempre que um usuário interage com um determinado elemento no seu website. Por exemplo, você pode acompanhar se os usuários clicam em um botão de reprodução de vídeo, em um determinado URL ou no carrossel de um produto. Os hits de evento transmitem quatro parâmetros de dados no URL: ação, categoria, rótulo e valor do evento. Você pode usá-los para categorizar as interações em relatórios que são específicos para o seu website. Posteriormente daremos mais detalhes sobre o acompanhamento de eventos.
+
+		Um hit de transação (também chamado de hit de "comércio eletrônico") pode transmitir dados para o Google Analytics sobre compras de comércio eletrônico, como produtos comprados, códigos da transação e SKUs (unidades em estoque). Se tiver configurado o comércio eletrônico avançado no Google Analytics, você poderá transmitir dados adicionais de comércio eletrônico, como categoria do produto, se os itens foram adicionados ou removidos de um carrinho de compras e quantas vezes os usuários visualizaram um produto em um website.
+
+		Os dados coletados pelas "hits" se tornam as dimensões que são usadas em relatórios.
+
+		O processamento de dados do GA são feitas em 3 etapas:
+
+			- Verificar se o usuário e novo ou recorrente.
+			- Categoriza as hits em sessões
+			- Une os dados do código de acompanhamento com outras fontes de dados.
+
+		O código de acompanhamento gera um identificador único e aleatório que é associado ao cookie de navegador do usuário. Se o usuário limpar o cookie, na próxima vez que ele entrar no site, será contado como usuário novo.
+
+		O Google Analytics pode identificar usuários em várias sessões, contanto que as sessões ocorram no mesmo navegador e dispositivo. O Google Analytics não reconhece usuários que acessam seu website usando dispositivos diferentes por padrão e contabilizará cada dispositivo como um usuário único. 
+
+		Ficar mais de 30 minutos sem interagir com a página cria uma outra sessão e essa nova sessão terá um hit de evento, que foi o evento de ficar 30 minutos sem interagir e gerar uma nova sessão.
+
+		O protocolo de avaliação permite enviar dados para o Google Analytics de qualquer dispositivo conectado à Web, como sistemas de ponto de venda ou quiosques conectados à Web. Diferentemente do código de acompanhamento que envia hits automaticamente, se você quiser coletar dados de um sistema fora do Google, precisará transmitir os hits de coleta de dados manualmente em uma string de URL.
+
+		O protocolo de avaliação define como construir seus hits usando um ID de acompanhamento e envia esses hits para a sua conta designada do Google Analytics. 
+
+		APLICAÇÃO DE CONFIGURAÇÕES: https://support.google.com/analytics/answer/7165155
+
+		Há dois motivos para aplicar filtros. Pode ser necessário transformar os dados que são exibidos em uma vista. Por exemplo, convém incluir apenas os dados de um determinado país em uma vista dedicada a relatórios no país em questão. Ou talvez seja importante excluir o tráfego de funcionários internos de uma vista que exibe dados de clientes.
+
+	Há quatro tipos de meta no Google Analytics:
+
+    As metas de destino (ou de exibição de página) têm como base a visualização de uma determinada página no seu website. 
+    
+    As metas de eventos ocorrem quando uma ação específica definida como um evento é acionada.
+
+	Esses são os dois tipos mais comuns de metas, mas você também pode configurar metas adicionais para avaliar o engajamento do usuário:
+
+    As metas de duração baseiam-se nas sessões que duram mais do que um tempo definido.
+    
+    As metas de páginas ou telas por sessão têm como base a quantidade de páginas definida que o usuário visualiza em uma determinada sessão.
+ 
+ 	Uma conversão é contabilizada apenas uma vez por sessão por meta configurada.
+
+ 	Durante o processamento, quando o Google Analytics detecta dados de hit para uma meta, ele calcula as conclusões de meta, o valor dela (se tiver sido indicado) e a respectiva taxa de conversão, e inclui todas essas informações nos seus relatórios.
+
+	No Google Analytics, as conversões e transações de comércio eletrônico são atribuídas à última campanha, pesquisa ou anúncio que direcionou o usuário.
+
+	Você aprendeu sobre dimensões e métricas no Google Analytics para iniciantes. Mas também é possível criar suas próprias dimensões e métricas no Google Analytics, chamadas de "Dimensões personalizadas" e "Métricas personalizadas". Com as dimensões personalizadas, você pode definir um determinado grupo de dados da métrica para a sua empresa e, em seguida, aplicá-lo como uma dimensão nos seus relatórios.
+
+    As dimensões personalizadas podem ser usadas como uma dimensão secundária em relatórios padrão, uma dimensão principal em um relatório personalizado ou como um segmento.
+
+    As "Métricas personalizadas" podem ser coletadas para qualquer dimensão padrão ou personalizada que possa ser avaliada por uma métrica predefinida no Google Analytics. 
+
+	Também é possível fazer o upload dos seus próprios dados no Google Analytics, incluindo os dados de hits, os dados estendidos armazenados em uma dimensão ou métrica personalizada, e os dados de resumo que permitem somar todas as métricas enviadas. Geralmente, essas informações são exportadas de uma ferramenta de negócios off-line, como um sistema de gerenciamento de conteúdo ou um sistema de gerenciamento de relacionamento com o cliente, para arquivos de texto. 
+
+	As dimensões e métricas podem ter um de três escopos:
+
+    	- Nível do hit
+    	- Nível da sessão
+    	- Nível do usuário
+
+	Durante o processamento, o Google Analytics determina o escopo que é aplicado a cada dimensão e métrica. Só é possível parear métricas com dimensões se as duas estiverem no mesmo escopo.
+
+	Embora o Google Analytics faça por você o pareamento de dimensões e métricas do mesmo escopo juntas em relatórios padrão, será necessário definir manualmente o escopo das dimensões ou métricas personalizadas que você criar. 
+
+	As conversões podem ser avaliadas como macroconversões ou microconversões, as macroconversões são as conversões mais amplas da sua empresa como realizar uma compra, já as microconversões podem ser consideradas como as conversões que levam o usuário para as macroconversões, como se inscrever para receber um cupom de desconto.
+
+	Um plano de avaliação é uma maneira de alinhar seus objetivos de negócios com suas definições de configuração do Google Analytics.
+
+	Seu plano de avaliação deve incluir um objetivo geral de negócios, diferentes estratégias que suportam esse objetivo e táticas que ajudarão você a alcançar suas estratégias. Cada tática terá indicadores principais de desempenho (ou IPDs) que ajudam você a avaliar suas macro ou micro conversões.
+
+	No geral, as macro conversões avaliam as táticas que suportam as várias estratégias. As micro conversões são métricas que ajudam você a entender melhor o comportamento do usuário que leva às macro conversões. 
+
+	Depois de ter identificado as macro e micro conversões e criado um plano para avaliar sua empresa, você poderá decidir como configurar o Google Analytics para coletar essas métricas.
+
+	Exemplo de plano de avaliação: https://analytics.google.com/analytics/academy/course/7/unit/1/lesson/5
+
+
+ATIVAÇÃO E CONFIGURAÇÃO DA COLETA DE DADOS:
+
+	ORGANIZAÇÃO DA SUA CONTA DO GOOGLE ANALYTICS:
+
+		Para uma propriedade, é recomendável que se tenha pelomenos 3 views:
+
+			- Raw Data(Dados Brutos);
+			- Test;
+			- Master(Principal).
+
+		É recomendável que os dados de diferentes dispositivos sejam analisados em diferentes propriedades(Mobile vs Website).
+
+		Se você tem dois sites relacionados com URLs ou subdomínios diferentes e quer acompanhá-los em uma única propriedade, configure o que chamamos de "acompanhamento de vários domínios". O acompanhamento de vários domínios reconhece quando um usuário navega entre websites relacionados na mesma sessão. Isso também é conhecido como "vinculação de site". Para configurar o acompanhamento de vários domínios, é necessário modificar o código de acompanhamento do Google Analytics em todas as páginas de todos os sites que você deseja acompanhar. Com o Gerenciador de tags do Google, fica muito mais fácil atualizar esse código.
+
+		Os clientes do Google Analytics 360 têm outra maneira de agregar os dados em vários domínios. Usando um recurso chamado "relatório de visualização completa", você pode agregar dados de várias propriedades em uma nova propriedade combinada de forma automática.
+
+		As propriedades de visualização completa não incluem os dados que você importa de outra conta ou vincula a ela, como o Google AdWords. Se você quiser incluir dados vinculados das suas propriedades de origem nas propriedades de visualização completa, será necessário vincular novamente a propriedade de visualização completa à conta vinculada.
+
+	CONFIGURAR FILTROS AVANÇADOS EM VISTAS:
+
+		Configuração de filtos avançados: https://support.google.com/analytics/answer/7165563
+
+
+	CRIAR SUAS PRÓRPIAS DIMENSÕES E MÉTRICAS PERSONALIZADAS:
+
+		O dado da dimensão personalizada é coletada pelo código de acompanhamento, ele é coletado junto à um hit já existente.
+
+		O caminho para chegar na criação da dimensão personalizada é : Admin -> Propriedades -> Definições Customizadas -> Dimensão Customizada.
+
+		SEMPRE ANOTAR O ÍNDICE DA DIMENSÃO E DA MÉTRICA PERSONALIZADA.
+
+		SOBRE ESCOPO:
+
+			Por exemplo, se você deseja que a dimensão inclua todas as vezes que um usuário acessou uma determinada página ou realizou uma ação específica, precisa definir um escopo no nível do hit. No entanto, se deseja que a dimensão agrupe dados associados a um determinado produto, precisa definir um escopo no nível do produto. Se a dimensão organizava dados pela duração de uma sessão ou para um determinado usuário, é possível definir escopos no nível da sessão e do usuário, respectivamente.
+
+		Ao criar uma dimensão personalizada, o GA gera um código em JavaScript para que a coleta desses dados seja possível. A implementação desse código fica por conta da empresa, mas é recomendado o Gerenciador de Tags para isso.
+
+		As dimensões personalizadas podem ser usadas como dimensões secundárias em relatórios padrão ou cimensões principais em relatórios personalizados.
+
+		Assim como a dimensão personalizada, O dado da métrica personalizada é coletada pelo código de acompanhamento, ele é coletado junto à um hit já existente.
+
+		O caminho para chegar na criação da dimensão personalizada é : Admin -> Propriedades -> Definições Customizadas -> Métrica Customizada.
+
+		Diferententemente da dimensão customizada, a métrica customizada só pode ter o escopo de Produto e de Hit.
+
+		Ambas tem coisas em comum, como a desativação, para desativá-las é necessário desmarcar a opção ativar. Uma vez ativadas, os dados coletados das dimensões e métricas personalizadas não poderão ser descartados, assim como os dados que foram deixados de fora por causa dos filtros não poderão ser pegos novamente.
+
+		As duas coisas possuem um id único que é atribuido por ordem de criação que serve para identificar essas métricas e as dimensões.
+
+
+	ENTENDER O COMPORTAMENTO DO USUÁRIO COM O ACOMPANHAMENTO DE EVENTOS:
+
+		Quando um usuário realiza uma ação em um elemento com acompanhamento de eventos, o código de acompanhamento transmite quatro parâmetros junto com o hit do evento. São eles: "Categoria", "Ação", "Rótulo" e "Valor". 
+
+		Você pode definir esses parâmetros no seu JavaScript para organizar os dados nos seus relatórios de eventos.
+
+	    	- Com a Categoria, você organiza em grupos os eventos que acompanha. No seu website, os grupos poderiam ser "Vídeos" ou "Compartilhamentos em redes sociais".   
+	    	
+	    	- Ação é a ação que o usuário realizou quando iniciou o evento. Se você estiver acompanhando a ação de clique no botão de reprodução de um vídeo, poderá usar uma categoria chamada "Vídeos" com a ação associada "Reprodução".  
+	    	
+	    	- Rótulo é um valor opcional usado para descrever com mais detalhes o elemento sendo acompanhado, como o nome de um vídeo. Isso pode ajudar você a simplificar seus relatórios de eventos.
+
+	    	- Valor é um valor numérico opcional, como a quantidade de tempo que um vídeo demora para carregar ou quanto vale uma ação de evento específica. Você pode usar o valor para atribuir uma quantia monetária a uma ação específica.
+
+		Atribua com atenção os nomes aos seus rótulos, categorias e ações. Assim, quando eles aparecerem nos seus relatórios, você e outras pessoas conseguirão entendê-los com facilidade.
+
+		O total de eventos é calculado como o número total de interações com o elemento acompanhado, e os eventos únicos mostram quantos usuários acionaram o evento em questão.
+
+		LINK PARA ACOMPANHAMENTO DE EVENTOS: https://support.google.com/analytics/answer/7165642
+
+		Métricas Calculadas - Função específica que fica localizada na parte de views.
+
+		Agrupamento de Canais - Função fica localizada na parte de views.
+
+		A edição de um agrupamento de canais não coleta dados de forma retroativa.
+		
+		Um novo agrupamento de canais coleta dados de forma retroativa também, ele aplica as regras adotadas à todos os dados coletados anteriormente.
+
+		Para analisar um agrupamento de canais criado, é necessário mudar a dimensão principal requerida no relatório de canais.
+
+		Podem ser criados no máximo 50 agrupamentos de canais novos por view.
+
+		Para criar agrupamento canais personalziados que podem ser vistos só por mim, é necessário ir até a área de "Ferramenta e Recursos Pessoais". É possível criar apenas 100 agrupamentos de canais pessoais por usuário. 
+
+		Ao compartilhar um agrupamento pessoal de canais, apenas a informação de configuração é compartilhada, os dados não.
+
+		Agrupamento de conteúdo está localizado na parte de views. Podem ser criados até cinco agrupamentos, neles podem tem quantas regras forem necessárias.
+
+		Ao configurar grupos de conteúdo, há três opções de atribuição de páginas aos grupos:
+
+		    - A opção "Agrupar por código de acompanhamento" cria um grupo usando seu código de acompanhamento do Google Analytics.
+	
+		    - A opção "Agrupar usando extração" cria um grupo usando a estrutura de URL das suas páginas. Para usar esse método, adicione uma expressão regular que extraia o nome do seu grupo a partir dos URLs das suas páginas.
+	
+		    - E a opção "Agrupar usando definições de regras" cria um grupo com base em regras lógicas simples. Você pode definir uma ou mais regras, por exemplo, "página contém Android" para agrupar todas as páginas relacionadas ao Android.
+
+		Você pode usar um, dois ou os três métodos apresentados acima. Se usar vários métodos, o Google Analytics adicionará o conteúdo a um grupo com base no método que corresponder primeiro. Primeiro, o Google Analytics avalia o código de acompanhamento. Depois, ele verifica se há extrações definidas e, por fim, se há regras configuradas. Nas regras, o Google Analytics avalia as regras na ordem em que elas foram definidas.
+
+		O agrupamento de conteúdos podem ser utilizados como dimensão principal em relatórios personalizados. Não é retorativo.
+
+		Informações sobre ID do Usuário : https://support.google.com/analytics/answer/7165164  (Não entendi muito bem)******	
+
+		Para acionar o comércio eletrônico avançado é necessário ativá-la. Na seção de Admin, ir para a parte de view e lá ir no tópico de Configuração de Ecommerce. 
+
+		É necessário colocar uma pequena parte de um código para a coleta de dados de Ecommerce.
+
+		Depois de instalar o plug-in de comércio eletrônico, você precisará escrever um código adicional para chamar os métodos do comércio eletrônico avançado que deseja usar. Esse código envia os dados relacionados do comércio eletrônico, que consistem em pares nome-valor, com um hit.
+
+		Para mais informações sobre Ecommerce : https://support.google.com/analytics/answer/7165568   
+		(Dar uma olhada).
+
+		Improtar dados - Seção admin / Propriedade / Importar dados.
+
+		Mais sobre importação de dados: https://support.google.com/analytics/answer/7165645
+
+
+
+	FERRAMENTAS E TÉCNICAS AVANÇADAS DE ANÁLISES:
+
+
+		Ambos os segmentos de usuário e sessão podem ser criados usando dimensões, métricas, datas de sessões e até mesmo sequências de ações dos usuários.
+
+		Você pode comparar até quatro segmentos por vez.
+
+		Os segmentos são aplicados depois de uma amostragem. Dessa forma, se os dados apresentados nos seus relatórios forem uma amostra, os dados exibidos nos seus segmentos também serão.
+
+		Segmentação de Dados: https://support.google.com/analytics/answer/7165574
+
+
+
+		Quando campanhas do AdWords e da DoubleClick são veiculadas na Rede de Display do Google, o tráfego é agrupado no canal da Rede Display.
+
+		Existem metas inteligentes criadas pelos algoritmos de aprendizado de máquina do google.
+
+
+		ANALISAR DADOS POR CANAL:
+
+			Se o usuário vistar a página por diversos canais, se ele realizar uma conversão, o crédito será dado ao último canal que o usuário usou para entrar no site no momento da conversão(modelo de atribuição de último clique).
+
+			Para ajudar você a ir além da atribuição de último clique, o Google Analytics fornece uma série de relatórios chamados Relatórios de funis multicanal, ou MCF, que podem mostrar o papel de cada uma das atividades de marketing anteriores no processo de conversão. Um canal que contribuiu para uma conversão antes da interação final deve receber crédito de "conversão assistida".
+
+			Os Relatórios de MCF também podem indicar o tempo total desde o interesse inicial até a compra. Esses dados do caminho de conversão englobam interações de quase todos os canais digitais, incluindo pesquisas orgânicas e pagas, sites de referência, afiliados, redes sociais e campanhas de e-mail. Para usar os funis multicanal, é necessário primeiro definir "Metas" ou "Comércio eletrônico".
+
+			Para mais informações sobre MCF: https://support.google.com/analytics/answer/7165174
+
+
+		ANALISAR DADOS POR PÚBLICO:
+
+			Quedas de tráfego em curto período de tempo podem indicar a presença negativa na imprensa ou redes sociais. Quedas de tráfego em longo período de tempo podem indicar novos problemas na versão ou a impossibilidade de ampliar seu público.
+
+			Mais sobre : https://support.google.com/analytics/answer/7165175
+
+
+		ANALISAR DADOS COM RELATÓRIOS PERSONALIZADOS:
+
+			Vários tipos de relatórios:
+
+				- Explorador: É o relatório padrão do Google Analytics que inclui um gráfico de linha e uma tabela de dados, opções de pesquisa e classificação e dimensões secundárias.
+
+				- Tabela fixa: É uma tabela estática e classificável que exibe dados em linhas.
+
+				- Cobertura Regional: É um mapa do mundo com regiões e países em cores mais escuras para indicar o volume de tráfego e de engajamento.
+
+			Vantagens de utilizar relatório personalizado:
+
+				- Usar uma dimensão personalizada como principal e não como secundária;
+
+				- Incluir mais de duas dimensão por linha, o que poderá ser útil se for necessário exportar a tabela de dados para outro software para análise;
+
+				- Incluir eventuais métricas personalziadas que foram coletadas.
+
+			Mais informações: https://support.google.com/analytics/answer/7165176
+
+
+
+	AVALIAÇÃO CAPÍTULO 3:
+
+
+		1. Aplicar segmentos aos seus relatórios pode ajudar você a isolar dados para quais dos grupos a seguir?
+
+		(selecione todas as respostas aplicáveis)
+		Correto!
+		X	Usuários de 25 a 34 anos com o navegador definido como o idioma espanhol
+		X	Usuários que visualizaram uma página no seu website e depois assistiram a um vídeo
+		X	Usuários que se engajaram com suas campanhas por e-mail ou de mídias sociais
+			Usuários que têm filhos
+
+		2. Você pode criar segmentos personalizados usando quais destes critérios?
+
+		(selecione todas as respostas aplicáveis)
+		Correto!
+		X	Dimensões
+		X	Métricas
+		X	Datas de sessões
+		X	Sequências de ações do usuário
+
+		3. Quantos segmentos é permitido comparar por vez no Google Analytics?
+		Correto!
+			1
+			2
+			3
+		X	4
+
+		4. Os segmentos são aplicados antes da amostragem. Sendo assim, se seus dados forem uma amostra, seus segmentos não serão.
+		Correto!
+			Verdadeiro
+		X	Falso
+
+		5. Se você deseja trabalhar com outros websites para enviar tráfego às suas páginas, qual relatório pode fornecer ideias em potencial para parceiros?
+		Correto!
+			Relatório de canais
+			Relatório de origem/mídia
+			Relatório de mapas de árvore
+		X	Relatório de referências
+
+		6. Se você deseja ver as páginas do seu site que recebem mais tráfego e maior engajamento, qual relatório deveria visualizar?
+		Correto!
+			Relatório de usuários ativos
+			Relatório de engajamento
+		X	Relatório de todas as páginas
+			Relatório de frequência e tempo para retorno
+
+		7. Se você deseja ver uma representação visual das páginas nas quais os usuários entraram no seu website, que relatório deveria visualizar?
+		Correto!
+			Relatório de páginas de destino
+		X	Relatório de fluxo de comportamentos
+			Relatório de detalhamento do conteúdo
+			Relatório de mapas de árvore
+
+		8. Nos Relatórios de funis multicanal, as conversões e as Transações de comércio eletrônico são atribuídas à última campanha, pesquisa ou anúncio que atraiu o cliente.
+		Correto!
+		X	Verdadeiro
+			Falso
+
+		9. Os Relatórios de funis multicanais podem creditar conversões em quais destes canais?
+
+		(selecione todas as respostas aplicáveis)
+		Correto!
+		X	Referências de websites
+		X	Pesquisa paga e orgânica
+		X	Campanhas personalizadas
+			Canais de televisão
+
+		10. Como o Google Analytics creditaria um canal que contribuiu para uma conversão antes da interação final?
+		Correto!
+			Conversão principal
+		X	Conversão assistida
+			Atribuição do segundo ao último clique
+			Atribuição de último clique
+
+		11. Se você deseja visualizar rapidamente os usuários que iniciaram sessões no seu website em períodos de 1 dia, 7 dias, 14 dias e 30 dias, qual relatório deveria usar?
+		Correto!
+			Relatório do User Explorer
+		X	Relatório de usuários ativos
+			Relatório de fluxo de usuários
+			Relatório de visão geral de comportamentos
+
+		12. Se você quiser agrupar um público com base na data de aquisição e depois comparar as métricas de comportamento no decorrer de uma série de semanas, qual relatório deveria usar?
+		Correto!
+		X	Relatório de análise de coorte
+			Relatório de usuários ativos
+			Relatório de fluxo de usuários
+			Relatório de visão geral de comportamentos
+
+		13. Com os relatórios personalizados no Google Analytics, quais das opções a seguir você pode realizar?
+
+		(selecione todas as respostas aplicáveis)
+		Correto!
+		X	Usar várias dimensões juntas no mesmo relatório
+		X	Criar um relatório com métricas personalizadas
+		X	Usar uma dimensão personalizada como dimensão principal
+			Incluir nomes e endereços de clientes
+
+		14. Se você deseja visualizar uma tabela estática e que pode ser classificada que exibe linhas de dados, que tipo de relatório personalizado deveria criar?
+		Correto!
+			Explorador
+		X	Tabela fixa
+			Cobertura regional
+			Tabela dinâmica
+
+		15. Quais das opções a seguir evitaria a exibição de dados em um relatório personalizado?
+
+		(selecione todas as respostas aplicáveis)
+		Correto!
+		X	Você aplicou um filtro que filtra todos os seus dados
+			Você não compartilhou o relatório personalizado com os usuários na mesma visualização
+		X	Você incluiu dimensões e métricas de diferentes escopos
+			Você aplicou muitas dimensões ao relatório personalizado 
+
+
+
+FERRAMENTAS DE MARKETING AVANÇADA:
+
+	INTRODUÇÃO AO REMARKETING: 
+
+
+		Remarketing - É quando o usuário entra no site, chega perto de realizar a compra, mas não compra, então, é lançado vários anúncios para ele através da Rede de Display da Google ou da pesquisa da google, entre otrous lugares afim de encorajar o usuário a voltar ao site e comprar o produto.
+
+		Para utilizar o remarketing no Google Analytics, primeiro é necessário ativar os recursos de publicidade nas configurações de propriedade do Google Analytics.
+
+		    - Na seção "Administrador", clique em "Informações de acompanhamento" e depois em "Coleta de dados". 
+		    
+		    - Depois, defina como "ativada" as opções "Remarketing" e "Recursos dos Relatórios de publicidade".
+
+		Também será necessário vincular sua conta do Google AdWords ou do DoubleClick Bid Manager ao Google Analytics.
+
+		Configurar Públicos:
+
+			- Para começar, clique em "Administrador" e, em seguida, "Definições de público" na propriedade que você deseja usar para essa lista de público.
+
+			- Clique em "Públicos".
+
+			- Em seguida, clique em "Novo público".
+
+		Públicos que incluem dimensões demográficas (idade, sexo, interesse etc.) da Rede de Display do Google não se qualificam para remarketing na Rede de Pesquisa do Google.
+
+		Mais informações: https://support.google.com/analytics/answer/7166025
+
+
+
+	COMO FAZER UMA SEGMENTAÇÃO MELHOR COM REMARKETING DINÂMICO:
+
+		Para definir o remarketing dinâmico, é necessário primeiro vincular suas contas do Google AdWords e do Google Analytics e, em seguida, ativar os recursos de publicidade, conforme discutido anteriormente. As empresas de varejo também precisam vincular suas contas do Google AdWords ao Google Merchant Center. O Google Merchant Center é um website em que os compradores conseguem ver seu inventário on-line e em estoque. As campanhas de remarketing dinâmico podem usar os dados do produto para personalizar melhor os anúncios.
+
+		Para ativar o remarketing dinâmico, você precisará:
+
+		    encontrar os atributos de indústria para remarketing dinâmico, criar suas dimensões personalizadas e atualizar as tags do seu website;
+		    criar públicos para remarketing dinâmico;
+		    criar atributos para remarketing dinâmico;
+		    criar sua campanha de remarketing dinâmico no Google AdWords.
+
+
+		Na Central de Ajuda, é possível encontrar uma lista com os atributos de indústria para remarketing dinâmico.
+
+		Depois de adicionar o código às páginas do seu website, você poderá criar seus públicos de remarketing dinâmico usando as dimensões personalizadas que definiu. Esses públicos podem incluir: 
+
+		    - usuários gerais que visualizaram sua página inicial ou qualquer página de categoria ou produto; 
+		    
+		    - usuários que visualizaram uma página de resultados de pesquisa no seu website; 
+		    
+		    - usuários que visualizaram páginas de listas de produtos ou detalhes de produtos; 
+		    
+		    - usuários que abandonaram o carrinho de compras; 
+		    
+		    - usuários que já realizaram conversões. 
+
+		Criar públicos-alvos para remarketing dinâmico: https://support.google.com/analytics/answer/3457161
+
+		Remarketing Dinâmico AdWords: https://support.google.com/adwords/answer/3124536
+
+		Mais informações: https://support.google.com/analytics/answer/7166576
+
+
+	CONCLUSÃO DO CURSO:
+
+		Quando você deseja analisar seus negócios on-line utilizando o Google Analytics, o processo todo começa com uma avaliação. Isso inclui questionamentos, como: "Quantas pessoas estão concluindo o caminho do cliente" e "Em que parte desse caminho você está perdendo ou mantendo clientes?" A avaliação diz respeito à coleta dos dados certos de que você precisa para responder às perguntas sobre seus negócios.
+
+		Em seguida, você precisará reunir os dados em relatórios legíveis e poderá enviá-los aos tomadores de decisões para que eles possam tomar decisões estratégicas importantes. Geralmente, isso inclui o desenvolvimento e a distribuição de relatórios personalizados e painéis.
+
+		Depois, você fará a análise dos dados. Às vezes, a análise é tão básica quanto a identificação de tendências maiores, mas ela também pode incluir segmentações mais complexas dos seus dados ou análises competitivas, que comparam o desempenho da sua empresa com os comparativos de mercado do setor. 
+
+		A análise é o processo de desenvolvimento de hipóteses com base nas suas expectativas e compreensão do motivo pelo qual suas métricas correspondem ou não a essas expectativas. Quando você encontra dados que não se alinham às suas expectativas, a análise pode ajudar a descobrir o motivo.
+
+		Os testes são a fase final do processo. Aqui você pode testar diferentes soluções para os problemas identificados na sua análise e tentar alinhar suas métricas às expectativas. Os testes são muito importantes, pois possibilitam a descoberta de oportunidades de melhoria e determinam o que está e o que não está funcionando. Então, você poderá repetir o que aprendeu com esse processo para continuar refinando e aprimorando seu marketing.
+
+
+
+SOBRE RETENÇÃO DE DADOS : https://support.google.com/analytics/answer/7667196

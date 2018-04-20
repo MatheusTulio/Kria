@@ -1,0 +1,302 @@
+GOOGLE TAG MANAGER:
+
+	1.PRIMEIROS PASSOS COM O GERENCIADOR DE TAGS DO GOOGLE:
+
+		1.2 COMEÇAR COM UM PLANO DE AVALIAÇÃO:
+
+			Exemplo de Plano de Avaliação: https://analytics.google.com/analytics/academy/course/5/unit/1/lesson/2
+
+		
+		1.3 DESENVOLVER UMA ESTRATÉGIA DE IMPLEMENTAÇÃIO DE TAGS:
+
+			Ao desenvolver uma estratégia de implementação de tags, recomendamos seguir estas etapas:
+
+		    - Primeiro, decida quais das tags existentes do seu site você pode gerenciar de forma mais eficiente no Gerenciador de tags. Se possível, recomendamos migrar todas as suas tags para gerenciar tudo em um único lugar e evitar alterações adicionais de código no seu website.
+		    
+		    - Em seguida, escolha os valores estático e dinâmico que você deseja transmitir do seu website. Podem ser dados do usuário, de receita, de reserva ou qualquer outra informação personalizada necessária para entender o comportamento do usuário. Pense nesses valores considerando os "eventos" (ou ações do usuário) que você deseja capturar com o Gerenciador de tags.
+		    
+		    - Por fim, descubra quais tags podem fornecer a você os dados necessários com base nas métricas e dimensões do seu plano de avaliação. Seus requisitos de dados devem estar relacionados às metas gerais de negócios. Dessa forma, você sabe que está analisando os dados apropriados.
+
+			Mais informações: https://support.google.com/analytics/answer/6224366?hl=pt-BR
+
+
+
+
+		1.4 VISÃO GERAL DO GERENCIADOR DE TAGS:
+
+			É necessário inserir um código JavaScript chamado "snippet de contêiner" em cada página do seu website. 
+
+			A administração do Gerenciador de tags do Google ocorre no nível da conta. Assim, você pode gerenciar tags para um ou mais websites. Geralmente, você só precisa de uma conta do Gerenciador de tags por empresa ou organização.
+
+			Cada conta do Gerenciador de tags possui pelo menos um contêiner. Um contêiner inclui as tags e os "acionadores" que determinam quando essas tags devem coletar dados ou ser acionadas. 
+
+			Normalmente, há um contêiner para cada domínio de website, embora você possa usar um único contêiner para o acompanhamento de vários domínios.
+
+			As variáveis são marcadores de valores definidos por você. Há dois tipos de variáveis: as incorporadas e as definidas pelo usuário. As variáveis incorporadas, como {{page path}} ou {{click id}}, já foram configuradas para você no Gerenciador de tags. Para ativá-las, basta selecioná-las.
+
+			As definidas pelo usuário são variáveis personalizadas que você pode criar, como {{purchaseComplete}}, para capturar quando ocorreu uma transação. Ao criar uma variável definida pelo usuário, você pode escolher tipos de variáveis que ajudam a coletar diferentes tipos de dados, ou criar strings reutilizáveis que podem ser usadas em todo o website.
+
+			Os operadores definem o relacionamento entre a variável e o valor que precisa ser verdadeiro para que um acionador seja disparado. Um operador pode ser algo como "igual a", "contém" ou "não contém". Também é possível configurar vários acionadores que precisam todos ser verdadeiros para uma tag ser disparada.
+
+			Com os acionadores, variáveis e eventos no Gerenciador de tags, você pode controlar quando as tags são disparadas em resposta a ações específicas do usuário.
+
+			Mais informações: https://support.google.com/analytics/answer/6224384?hl=pt-BR
+
+
+
+	2 CONFIGURAR O GERENCIADOR DE TAGS DO GOOGLE:
+
+		2.1 INSTALAR A TAG DO GOOGLE NO ANALYTICS:
+
+			Para implementar uma tag no Gerenciador de tags do Google, primeiro você precisa criar uma conta e um contêiner, implementar a tag e testá-la para garantir que ela esteja funcionando adequadamente. 
+
+			O Gerenciador de tags fornece a você o código do contêiner que está pronto para ser copiado e colado. Para melhores resultados, insira-o imediatamente depois da tag de abertura <body> em todas as páginas do seu website. Você pode ver o código do contêiner novamente em "Administrador" selecionando o contêiner correto e clicando em "Instalar Gerenciador de tags do Google". Ou em uma janela pop-up depois de criar uma conta e o contêiner.
+
+			Caso seja necessári oanalisar o comportamento do usuário na sua página, é sempre importante colocar a tag padrão "Exibição de página" do Analytics em todas as páginas.
+
+			Para adicionar o ID de acompanhamento do Analytics, acesse Analytics em "Administrador", clique em "Propriedade" e em "Configurações da propriedade". Como alternativa, você pode encontrar o ID clicando em "Página inicial" e expandindo a pasta "Conta".
+
+			Para aproveitar o remarketing e ver dados demográficos de clientes do Analytics, selecione "Recursos da publicidade gráfica". 
+
+			Para analisar as alterações no contêiner antes de publicá-las, clique em "Visualizar". Um banner na parte superior indica a versão da tag exibida.
+
+			No "Modo de visualização", um painel de depuração aparece na parte inferior do navegador da Web com um resumo das tags que dispararam.
+
+			Olhar os relatórios em tempo real para analisar se a tag está funcionando como deveria.
+
+			Mais informações: https://support.google.com/analytics/answer/6224388?hl=pt-BR
+
+
+
+		2.2 CONFIGURAR UMA VARIÁVEL DA PROPRIEDADE DO GOOGLE ANALYTICS:
+
+			Definir uma variável constante com o valor do ID da prorpriedade do GA para facilitar o processo, dessa forma é só chamar a variável do que ir ver o ID todas vez que precisar.
+
+			Mais informações : https://support.google.com/analytics/answer/6224398?hl=pt-BR
+
+
+		2.3 CONFIGURAR O ACOMPANHAMENTO DE VÁRIOS DOMÍNIOS:
+
+			Ficou confuso !!!
+
+			Mais informações: https://support.google.com/analytics/answer/6224405?hl=pt-BR
+
+
+		2.4 Como fucniona a camada de dados(DATA LAYERS):
+
+			A camada de dados no Gerenciador de tags é um objeto JavaScript que contém dados como informações de eventos personalizados ou variáveis transmitidas do seu website. As informações na camada de dados são estruturadas em pares de valores-chave que podem ser transmitidos a aplicativos de terceiros, como o Google Analytics, ou usados como um acionador para determinar quando as tags devem ser disparadas.
+
+			Há duas formas de preencher a camada de dados com esses pares de valores-chave.
+
+			 - Preencher antecipadamente os valores na camada de dados:
+					A primeira forma é preencher antecipadamente os valores na camada de dados quando uma página da Web é carregada. Uma página de viagem, com uma variável chamada LocalDaViagem definada com o valor para cada destino de viagem.
+
+			JavaScript na camada de dados:
+				- A segunda forma de preencher os dados é usar um método JavaScript para inserir valores da sua página da Web diretamente na camada de dados. Exemplo, carrinho de compras ao qual os usuários podem adicionar viagens de forma assíncrona sem a necessidade de atualizar a página. É possível gravar um JavaScript que insere essas informações na camada de dados quando o usuário seleciona uma viagem a ser comprada.
+
+			Você deve colocar o objeto da camada de dados no código do seu website antes do snippet do contêiner.
+
+			É importante observar que as variáveis da camada de dados não persistem nas páginas de forma automática. Se você quiser transmitir um valor para a camada de dados em outras páginas, precisará criar um código personalizado para fazê-lo.
+
+			Mais informações: https://support.google.com/analytics/answer/6224413?hl=pt-BR
+
+
+
+3. COLETAR DADOS USANDO A CAMADA DE DADOS, VARIÁVEIS E EVENTOS:
+
+	3.1 PASSAR VALORES ESTÁTICOS EM DIMENSÕES PERSONALIZADAS:
+
+		*****Assistir denovo o vídeo, muito confuso.******
+
+		Você pode usar variáveis definidas pelo usuário que coletam valores estáticos específicos no seu website para criar dimensões personalizadas e ver uma análise mais detalhada no Analytics.
+
+		Na hora de criação de variáveis na camada de dados, deixar a versão como a mais recente disponível.
+
+		Depois de criar a variável, é necessário colocar a camada de dados no script da página que queremos implementar a camada de dados.
+
+		Caso não queira dar um valor pré definido para a camada de dados, deixar ela vazia.
+
+		Para preencher as variáveis da camada de dados, os desenvolvedores web podem configurar um método push para fazer essa tarefa, passando pares de valores específicos dependendo de onde clicarem ou qual ação realizarem.
+
+		Após o preenchimento da camada de dados, é necessário enviar essas informações para o Analytics.
+
+		Nesse momento é necessário a criação das dimensões personalziadas para as variáveis criadas que estão na camda de dados.
+
+		Depois que criarmos uma dimensão, o Analytics exibirá um snippet de código. Cada snippet tem um número de dimensão (também chamado de índice) que precisamos inserir no Gerenciador de tags para mapear a tag "Exibição de página" do Analytics às dimensões personalizadas adequadas.
+
+		Criar as Tag com as configurações específicas das dimensões e variáveis criadas.
+
+		Mais informações: https://support.google.com/analytics/answer/6223320?hl=pt-BR
+
+
+	3.2 PASSAR VALORES DINÂMICOS EM ḾÉTRICAS PERSONALIZADAS:
+
+		Com o Gerenciador de tags, você pode passar valores dinâmicos, como a receita do seu website, em métricas personalizadas que podem ser usadas no Analytics para analisar dados como o comportamento de venda.
+	
+		Tópicos para conclusão: 
+
+			- Criar uma variável da camada de dados definida pelo usuário (GTM)
+			- Adicionar a camada de dados (Código em JavaScript -> GTM)
+			- Configurar uma métrica personalizada no Analytics (GA)
+			- Atualizar a tag do Analytics no Gerenciador de tags (GTM)
+			- Criar um Relatório personalizado no Analytics (GA)
+
+		Mais informações: https://support.google.com/analytics/answer/6223390?hl=pt-BR
+
+
+	3.3 ACOMPANHAR EVENTOS COM VARIÁVEIS: 
+
+		Com o Gerenciador de tags, você pode usar um acionador de evento para acompanhar ações específicas no seu website, como o número de vezes em que os usuários assistiram a um vídeo ou clicaram em um botão
+
+		Tópicos para conclusão: 
+
+			- Configurar uma variável de URL definida pelo usuário (GTM)
+			- Configurar o acionador de evento(TRIGGER) (GTM)
+			- Copiar a tag do Analytics (GTM)
+			- Atualizar as configurações da tag do Analytics (GTM)
+
+		Mais informações: https://support.google.com/analytics/answer/6223403?hl=pt-BR
+
+
+
+4. USAR TAGS ADICIONAIS PARA MARKETING E REMARKETING:
+
+	4.1 CONFIGURAR O ACOMPANHAMENTO DO GOOGLE ADWORDS:
+
+		O Google AdWords pode ajudar você a entender melhor quais palavras-chave resultaram em mais tráfego e conversões no website. Você pode usar o Gerenciador de tags para implementar o código de acompanhamento do Google AdWords no seu website.
+
+		Tópicos para conclusão: 
+
+			- Obter o ID de conversão no Google AdWords (GAW);
+					Pegar o ID de conversão e o Rótulo de Conversão.
+
+			- Criar a tag de acompanhamento de conversões (GTM);
+					O campo "Valor de conversão" é opcional. Com ele, você pode definir quanto cada conversão vale para sua empresa. 
+					Com "Código da moeda", é possível definir a moeda avaliada.
+
+			- Visualizar a tag
+
+			Use o modo "Visualização" e teste alguns cliques do Google AdWords para verificar se suas conversões estão sendo acompanhadas e se tudo está funcionando bem. Depois, publique quando estiver pronto.
+
+			Configurar uma tag de acompanhamento de conversões do Google AdWords no Gerenciador de tags pode ajudar a conhecer o desempenho de palavras-chave, anúncios e campanhas. Depois de configurar o acompanhamento de conversões, consulte Relatórios de tráfego no Analytics para entender melhor os caminhos de conversão dos usuários.
+
+			Mais informações: https://support.google.com/analytics/answer/6223414?hl=pt-BR
+
+		4.2 CONFIGURAR O REMARKETING DINÂMICO:
+
+			O remarketing é uma ferramenta eficiente para segmentar conteúdo de anúncios para usuários que já acessaram seu website ou aplicativo.
+
+			Para ativar o remarketing com o Google Analytics, é necessário alterar seu código de acompanhamento do Google Analytics.
+
+			É muito importante criar lista de públicos alvos, nessas lsitas serão adicionados todos os usuários que visitaram seu site ou seu app e possuam um conjunto de atributos em comum, como por exemplo, todos os usuários que procuram um produto gratuito.
+
+			Ao criar uma lista de públicos-alvo no Google Analytics, você pode usar um destes públicos predefinidos:
+
+		    - Todos os usuários do seu website ou aplicativo
+		    - Usuários que visitam uma página ou área específica do website, ou uma tela do aplicativo
+		    - Usuários que concluíram uma conversão de meta específica
+		    - Novos usuários que o Google determina como candidatos viáveis por meio do aprendizado automático
+
+		  Também é possível criar lista de públicos alvos específicos.
+
+		  Com a integração do Google Analytics ao Google AdWords, você também pode identificar grupos de usuários com base em uma sequência ou combinação específica de ações. Por exemplo, você pode criar uma lista de públicos-alvo com base nos usuários do aplicativo Go Fish! que concluíram um nível e depois acessaram a tela da loja Bait and Tackle, mas não realizaram uma compra.
+
+		  Quando um usuário associado a um desses cookies ou códigos de acompanhamento acessar um site ou aplicativo da Rede de Display do Google, ele visualizará um dos seus anúncios de remarketing de acordo com as regras que você definiu.
+
+		  O Remarketing Dinâmico é mais poderoso que o Remarketing padrão do Google AdWords porque com ele você segmenta a publicidade com base em informações coletadas na camada de dados e o cookie do Google Analytics.
+
+		  There are four steps to setup Dynamic Remarketing:
+
+		    - First, link your AdWords and Analytics accounts, and make sure you’ve enabled Analytics’ advertising features. (GA)
+
+		    - Next, set up Data Layer variables that collect information about content and services users have viewed on your website. (GTM)
+
+		    	Now that we’ve linked our AdWords and Analytics accounts, and enabled display advertising, we’ll need to set up the Data Layer to pass values to Analytics for Dynamic Remarketing. To do this, we’ll first look up what business type dynamic attributes are available in AdWords. Dynamic Attributes are variables that AdWords uses to describe particular business types for remarketing campaigns. We can find a list of these dynamic attributes for each business type in the Analytics Help Center.
+
+		    - Then, create Custom Dimensions that hold information sent from the Data Layer and map back to AdWords for remarketing. (GA)
+
+		    - Lastly, set up Analytics tags in Tag Manager to send information from the Data Layer to your Custom Dimension. (GTM)
+
+
+		  Mais informações: https://support.google.com/analytics/answer/6244427?hl=pt-BR 
+		  									https://support.google.com/analytics/answer/6223401?hl=pt-BR
+
+
+	AVALIAÇÃO 4:
+
+		1. Para criar uma tag de acompanhamento de conversões do Google AdWords no Gerenciador de tags, qual destes itens é necessário na sua conta do Google AdWords?
+
+			O número da conta do Google AdWords
+		X	O rótulo de conversão
+		X	ID de conversão
+			A propriedade de conversão
+
+		2. O que você colocaria no campo "Valor de conversão" para capturar dinamicamente os valores de conversão associados à sua tag do Google AdWords?
+
+			Uma variável incorporada de referenciador que registra os URLs de conversão
+		X	Uma variável definida pelo usuário que registra o valor da conversão
+			O tempo médio da visita dos usuários de acordo com o Google Analytics
+			O valor estimado que os usuários gastarão de acordo com a variável do Google Analytics que registra URLs de conversão
+
+		3. O que o remarketing dinâmico do Google Analytics usa para exibir aos visitantes do website anúncios relacionados ao conteúdo visualizado anteriormente?
+
+		X	Atributos de hit e sessão coletados pela camada de dados
+			Produtos que o usuário marcou com o botão +1 no Google Plus
+		X	Informações do usuário do cookie do Google Analytics
+			Atributos de hit e sessão coletados pelo Google AdWords
+
+		4. Para configurar o remarketing dinâmico no Gerenciador de tags, onde você ativa a coleta de dados para os Recursos de publicidade?
+
+
+			Configurações de administrador da conta do Google AdWords
+		X	Configurações de administrador da conta do Google Analytics
+			Configurações de administrador da conta do Gerenciador de tags
+			Painel do Gerenciador de tags
+
+		5. O que o Google AdWords usa para gerar anúncios dinâmicos com base nas interações anteriores do usuário com produtos e serviços do website?
+		Correto!
+			Cookies do navegador
+			Métodos Javascript
+		X	Atributos dinâmicos
+			Perfis de usuário
+
+		6. Onde você pode encontrar uma lista de atributos de indústria para remarketing dinâmico?
+
+		X	A Central de Ajuda do Google Analytics
+			A área "Administrador" do Google Analytics
+			A área "Administrador" do Gerenciador de tags
+			A área "Administrador" do Google AdWords
+
+		7. Para o remarketing dinâmico, qual tipo de variável você precisa configurar no Gerenciador de tags para coletar informações na camada de dados?
+
+			Variável constante
+		X	Variável da camada de dados
+			Variável do Google AdWords
+			Variável de evento
+
+		8. Para o remarketing dinâmico, o que precisa ser configurado no Google Analytics para coletar informações da camada de dados?
+	
+			Variável constante
+		X	Variável da camada de dados
+			Variável do Google AdWords
+			Variável de evento
+
+		9. Para o remarketing dinâmico, se você quiser usar a camada de dados para coletar quando um usuário adiciona um produto ao carrinho de compras sem atualizar a página, qual tipo de acompanhamento do Google Analytics você usaria?
+
+			Exibição de página
+		X	Evento
+			Transação
+			Rede social
+
+		10. No remarketing dinâmico, para configurar sua tag para disparo em determinada página, como você deve definir a varável do acionador?
+
+		X	URL da página
+			Referenciador
+			Classes de cliques
+			Nome do host da página 
+
+
+
+	CENTRAL DE AJUDA DO GERENCIADOR DE TAGS GOOGLE : https://support.google.com/tagmanager/?hl=pt-BR#topic=3441530
+
+	CENTRAL DO DESENVOLVEDOR DO GERENCIADOR DE TAGS GOOGLE: https://developers.google.com/tag-manager/?hl=pt_BR
